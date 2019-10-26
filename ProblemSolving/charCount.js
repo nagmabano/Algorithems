@@ -1,3 +1,6 @@
+// function to count the number of characters
+
+
 function charCount(str){
     let obj = {};
     for(let char of str) {
@@ -24,3 +27,34 @@ function isAlphanumeric(char) {
 }
 
 console.log(charCount("hello World 9!!!"));
+
+// function to compare two arrays where the element of an array is square of the element of another array
+
+function isSame(arr1 , arr2) {
+
+    let flag = false;
+
+    if (arr1.length === arr2.length) {
+        for (let element of arr1) {
+            if (arr2.indexOf(element*element) > -1) {
+                flag = true;
+            } else {
+                flag = false;
+                break;
+            }
+        }
+    }
+    
+
+    if (flag === true) {
+        return true;
+    }
+
+    return false;
+}
+
+
+arr1 = [1,2,3,2];
+arr2 = [1,4,9];
+
+console.log(isSame(arr1, arr2));
