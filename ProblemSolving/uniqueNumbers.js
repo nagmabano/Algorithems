@@ -25,6 +25,9 @@ console.log('unique number', countUniqueNumbers([0,1,1,2,2,2,3,5,5,5,8]));
 // count will be index of i plus 1
 
 function countUniqueNumbers1(arr) {
+
+    if (arr.length === 0) return 0;
+
     let left = 0;
     let right = 1;
     for (let i = 0; i < arr.length - 1 ; i++) {
@@ -45,6 +48,9 @@ console.log('way 2' , countUniqueNumbers1(arr1));
 // refractoring above code 
 
 function countUniqueNumbers2 (arr) {
+
+    if (arr.length === 0) return 0;
+
     let i = 0;
     for (let j = 1 ; j < arr.length ; j++) {
         if (arr[i] !== arr[j]) {
