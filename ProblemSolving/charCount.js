@@ -33,11 +33,18 @@ console.log(charCount("hello World 9!!!"));
 function isSame(arr1 , arr2) {
 
     let flag = false;
+    let tempArr1 = [...arr1];
+    let tempArr2 = [...arr2];
 
     if (arr1.length === arr2.length) {
         for (let element of arr1) {
-            if (arr2.indexOf(element*element) > -1) {
+            if (tempArr2.indexOf(element*element) > -1) {
+                let index1 = tempArr1.indexOf(element);
+                let index2 = tempArr2.indexOf(element*element);
                 flag = true;
+                tempArr1.splice(index1, 1);
+                tempArr2.splice(index2, 1)
+                
             } else {
                 flag = false;
                 break;
@@ -54,7 +61,7 @@ function isSame(arr1 , arr2) {
 }
 
 
-arr1 = [1,2,3,2];
-arr2 = [1,4,9];
+arr1 = [1,2,1];
+arr2 = [4,4,1];
 
 console.log(isSame(arr1, arr2));
