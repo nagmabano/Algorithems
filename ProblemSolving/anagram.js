@@ -1,3 +1,5 @@
+// frequency pattern
+
 // check if the two strings are anagram 
 
 function validAnagram(str1 , str2) {
